@@ -1,13 +1,15 @@
-<h1>Hello, milo is cool!</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<h1>Milo's Epic Articles!</h1>
+
+Our blog has <%= Article.public_count %> articles and counting!
 
 <ul>
   <% @articles.each do |article| %>
-    <li>
-      <b>
-      	<%= link_to article.title, article %>
-      </b>
-      <%= article.body %>
-    </li>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
+
+<%= link_to "New Article", new_article_path %>
