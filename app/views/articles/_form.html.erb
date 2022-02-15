@@ -16,6 +16,16 @@
   </div>
 
   <div>
+    <%= form.label :pico_path %><br>
+    <%= form.text_field :pico_path %><br>
+    <% article.errors.full_messages_for(:pico_path).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <input type="file" id="myFile" name="filename">
+
+  <div>
     <%= form.submit %>
   </div>
 

@@ -15,3 +15,25 @@
  */
 
 h1 {color:red; font-size:30px; background-color: lightgrey;}
+
+#comment {display:inline-block;
+          background-color: lightgrey;
+          padding-top:5px; padding-bottom:5px; padding-left: 10px; padding-right: 10px;
+          border-radius: 4px;
+          word-break: break-all;
+          white-space: normal;
+}
+
+#comment_trash {
+    text-decoration:none;
+    font-size: 200px;
+    color:red;
+    background-color: gray;
+    padding-left: 20px;
+    word-break: break-all;
+    white-space: normal;
+}
+
+#test_button {
+    background-color: green;
+}
