@@ -1,13 +1,16 @@
 <% unless comment.archived? %>
-  <p id="comment">
+  <div id="comment">
     <strong><%= comment.commenter %></strong>
     <br>
     <%= comment.body %>
     <br>
 
-    <%= link_to "🗑", [comment.article, comment], data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Delete comment?"
-                } %>
-  </p>
+    <div id = "comment_trash">
+      <%= link_to "🗑", [comment.article, comment], data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Delete comment?"
+                  } %>
+    </div>
+  </div>
+  <br>
 <% end %>

@@ -1,39 +1,106 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+    font-family: "DM Sans", sans-serif;
+}
 
 h1 {color:red; font-size:30px; background-color: lightgrey;}
 
 #comment {display:inline-block;
-          background-color: lightgrey;
-          padding-top:5px; padding-bottom:5px; padding-left: 10px; padding-right: 10px;
-          border-radius: 4px;
-          word-break: break-all;
-          white-space: normal;
-}
-
-#comment_trash {
-    text-decoration:none;
-    font-size: 200px;
-    color:red;
-    background-color: gray;
-    padding-left: 20px;
+    background-color: lightgrey;
+    padding-top:5px; padding-bottom:5px; padding-left: 10px; padding-right: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
     word-break: break-all;
     white-space: normal;
 }
 
-#test_button {
-    background-color: green;
+#comment_trash {
+    text-decoration:none;
+    font-size: 20px;
+    color:red;
+    background-color: red;
+    border-radius: 4px;
+    padding-left: 20px;
+    word-break: break-all;
+    white-space: nowrap;
+}
+
+.concept {
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px #888888;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.concept_row {
+    display: flex;
+    align-items: center;
+}
+
+.concept_header {
+    text-transform: uppercase;
+    color: rgb(99, 77, 70);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.concept_id {
+    width: 3rem;
+    margin-left: 0.7rem;
+}
+
+.concept .concept_id {
+    align-self: start;
+}
+
+.concept_spacer {
+    flex-grow: 1;
+}
+
+.concept_header .concept_cluster {
+    margin-right: 1.5rem;
+}
+
+.concept_info .concept_cluster {
+    margin-right: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: cornflowerblue;
+    padding: 4px 6px;
+    border-radius: 5px;
+}
+
+.concept_stars {
+    width: 6rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.concept_stars svg {
+    color: cornflowerblue;
+    height: 1rem;
+    white-space: nowrap;
+}
+
+.concept_info .concept_name {
+    border-bottom: 1px solid black;
+    padding-bottom: 0.5rem;
+}
+
+.concept_extra {
+    padding-top: 0.5rem;
+}
+
+.concept_extra .concept_name {
+    white-space: pre-line;
+}
+
+.concept_extra .concept_stars a {
+    background-color: #f24747;
+    border-radius: 5px;
+    padding: 0 3px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
 }

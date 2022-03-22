@@ -12,8 +12,12 @@
                   } %></li>
 </ul>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+<%= render "list_concepts", article: @article, show_delete: false %>
 
+<!--
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+-->

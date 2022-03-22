@@ -15,9 +15,28 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    uploaded_file_html = article_params[:pico_file_html]
+    uploaded_file_js = article_params[:pico_file_js]
 
-    if @article.save
+    @article = Article.new(title: article_params[:title],body: article_params[:body],status: article_params[:status])
+
+    fileName = uploaded_file_js.original_filename
+
+    if fileName.include?(".js")
+        fileName = fileName[0..-4]
+    end
+
+    Dir.mkdir("public/pico8_games/" + fileName)
+
+    File.open(Rails.root.join('public', 'pico8_games',fileName,'index.html'), 'wb') do |file|
+      file.write(uploaded_file_html.read)
+    end
+    File.open(Rails.root.join('public', 'pico8_games',fileName,uploaded_file_js.original_filename), 'wb') do |file|
+      file.write(uploaded_file_js.read)
+    end
+    @article.pico_path = fileName
+
+    if @article.save!
       redirect_to @article
     else
       render :new, status: :unprocessable_entity
@@ -47,6 +66,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body, :pico_path)
+      params.require(:article).permit(:title, :body, :status, :pico_file_html, :pico_file_js)
     end
 end

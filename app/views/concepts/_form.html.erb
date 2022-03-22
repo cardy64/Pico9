@@ -1,0 +1,17 @@
+<%= form_with model: [ @article, @article.concepts.build ] do |form| %>
+  <p>
+    <%= form.label :concept_id, "Concept ID" %><br>
+    <%= form.text_field :concept_id %>
+  </p>
+  <p>
+    <%= form.label :why, "Why?" %><br>
+    <%= form.text_area :why %>
+  </p>
+  <p>
+    <%= form.label :stars, "How many stars are you requesting?" %><br>
+    <%= form.text_field :stars %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -16,14 +16,15 @@
   </div>
 
   <div>
-    <%= form.label :pico_path %><br>
-    <%= form.text_field :pico_path %><br>
-    <% article.errors.full_messages_for(:pico_path).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+    <%= form.label :HTML_File %><br>
+    <%= form.file_field :pico_file_html, :accept => 'text/html'%><br>
+  </div>
+  <div>
+    <%= form.label :JS_File %><br>
+    <%= form.file_field :pico_file_js, :accept => 'text/javascript'%><br>
   </div>
 
-  <input type="file" id="myFile" name="filename">
+  <!-- <input type="file" id="myFile" name="filename"> -->
 
   <div>
     <%= form.submit %>
@@ -35,3 +36,10 @@
   </div>
 
 <% end %>
+
+<hr>
+<h2>Add a concept:</h2>
+<%= render 'concepts/form' %>
+<hr>
+
+<%= render "list_concepts", article: @article, show_delete: true %>
