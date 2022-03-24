@@ -1,16 +1,6 @@
 module ConceptName
   extend ActiveSupport::Concern
 
-  def opened_concept = 4
-
-  def get_open
-    return opened_concept
-  end
-
-  def click_event(clicked)
-
-  end
-
   def get_concept_name?
 
     concepts_list = JSON.parse(File.read('public/textfiles/concepts.json'))

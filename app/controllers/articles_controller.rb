@@ -20,21 +20,42 @@ class ArticlesController < ApplicationController
 
     @article = Article.new(title: article_params[:title],body: article_params[:body],status: article_params[:status])
 
-    fileName = uploaded_file_js.original_filename
+    if uploaded_file_html != nil and uploaded_file_js != nil
+      fileName = uploaded_file_js.original_filename
 
-    if fileName.include?(".js")
-        fileName = fileName[0..-4]
-    end
+      if fileName.include?(".js")
+          fileName = fileName[0..-4]
+      end
 
-    Dir.mkdir("public/pico8_games/" + fileName)
+      Rails.logger.debug "before"
 
-    File.open(Rails.root.join('public', 'pico8_games',fileName,'index.html'), 'wb') do |file|
-      file.write(uploaded_file_html.read)
+#       if fileName == nil
+#         Rails.logger.debug "filename_was_nil"
+#         fileName = fileName + "_1"
+#       elsif article_params[:id] == nil
+#         Rails.logger.debug "id_was_nil"
+#         fileName = fileName + "_2"
+#       else
+#         Rails.logger.debug "none_were_nil"
+#         fileName = fileName + "_3"
+#       end
+
+      fileName = fileName  + "_" + Time.now.to_i
+
+      Rails.logger.debug "after"
+
+      Dir.mkdir("public/pico8_games/" + fileName)
+
+      File.open(Rails.root.join('public', 'pico8_games',fileName,'index.html'), 'wb') do |file|
+        file.write(uploaded_file_html.read)
+      end
+      File.open(Rails.root.join('public', 'pico8_games',fileName,uploaded_file_js.original_filename), 'wb') do |file|
+        file.write(uploaded_file_js.read)
+      end
+      @article.pico_path = fileName
+    else
+      @article.pico_path = ""
     end
-    File.open(Rails.root.join('public', 'pico8_games',fileName,uploaded_file_js.original_filename), 'wb') do |file|
-      file.write(uploaded_file_js.read)
-    end
-    @article.pico_path = fileName
 
     if @article.save!
       redirect_to @article

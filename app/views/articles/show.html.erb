@@ -1,6 +1,8 @@
 <h1 align="center"><%= @article.title %></h1>
 
-<p align="center"><iframe src=<%="/pico8_games/" + @article.pico_path + "/index.html"%> id="pico_iframe" width="700" height="650"></iframe></p>
+<% if @article.pico_path != "" %>
+  <p align="center"><iframe src=<%="/pico8_games/" + @article.pico_path + "/index.html"%> id="pico_iframe" width="700" height="650"></iframe></p>
+<% end %>
 
 <p><%= @article.body %></p>
 
