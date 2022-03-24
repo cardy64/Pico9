@@ -24,6 +24,10 @@ h1 {color:red; font-size:30px; background-color: lightgrey;}
     white-space: nowrap;
 }
 
+.description {
+    white-space: pre-wrap;
+}
+
 .concept {
     margin-bottom: 15px;
     box-shadow: 0 0 20px #888888;

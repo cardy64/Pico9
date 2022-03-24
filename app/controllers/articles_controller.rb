@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
 #         fileName = fileName + "_3"
 #       end
 
-      fileName = fileName  + "_" + Time.now.to_i
+      fileName = fileName  + "_" + Time.now.to_i.to_s
 
       Rails.logger.debug "after"
 
