@@ -5,6 +5,7 @@ class Article < ApplicationRecord
   has_many :concepts, dependent: :destroy
 
   validates :title, presence: true
-  validates :body, presence: true, length: { minimum: 10}
+  validates :body, presence: true
+#   , length: { minimum: 10}
   validates :pico_path, presence: true
 end
