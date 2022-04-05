@@ -1,3 +1,6 @@
+<% content_for :title, @article.title %>
+<% content_for :page_class, "article_page" %>
+
 <h1 align="center"><%= @article.title %></h1>
 
 <% if @article.pico_path != "" %>

@@ -4,6 +4,35 @@ body {
 
 h1 {color:red; font-size:30px; background-color: lightgrey;}
 
+.article_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 730px;
+    margin: 0 auto;
+    gap: 30px;
+    list-style: none;
+}
+
+.index_page {
+    background-color: #2a2a2a;
+}
+.article_page {
+
+}
+
+.cover_image {
+}
+
+.cover_image a {
+}
+
+.cover_image img {
+    box-shadow: rgba(0, 0, 0, .15) 8px 8px 0 0;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
 #comment {display:inline-block;
     background-color: lightgrey;
     padding-top:5px; padding-bottom:5px; padding-left: 10px; padding-right: 10px;
@@ -69,10 +98,35 @@ h1 {color:red; font-size:30px; background-color: lightgrey;}
     margin-right: 1rem;
     font-weight: bold;
     color: white;
-    background-color: cornflowerblue;
     padding: 4px 6px;
     border-radius: 5px;
 }
+
+.concept_cluster.cluster_-1 {background-color: black;}
+.concept_cluster.cluster_0 {background-color: #2c5282;}
+.concept_cluster.cluster_1 {background-color: #d7c613;}
+.concept_cluster.cluster_2 {background-color: #68d391;}
+.concept_cluster.cluster_3 {background-color: #f6ad55;}
+.concept_cluster.cluster_4 {background-color: #fa7888;}
+.concept_cluster.cluster_5 {background-color: #63b3ed;}
+.concept_cluster.cluster_6 {background-color: #19daaf;}
+.concept_cluster.cluster_7 {background-color: #b794f4;}
+.concept_cluster.cluster_8 {background-color: #f687b3;}
+.concept_cluster.cluster_9 {background-color: #06ac6e;}
+.concept_cluster.cluster_10{background-color: #005380;}
+
+.concept_stars.cluster_-1 {color: black;}
+.concept_stars.cluster_0 {color: #2c5282;}
+.concept_stars.cluster_1 {color: #d7c613;}
+.concept_stars.cluster_2 {color: #68d391;}
+.concept_stars.cluster_3 {color: #f6ad55;}
+.concept_stars.cluster_4 {color: #fa7888;}
+.concept_stars.cluster_5 {color: #63b3ed;}
+.concept_stars.cluster_6 {color: #19daaf;}
+.concept_stars.cluster_7 {color: #b794f4;}
+.concept_stars.cluster_8 {color: #f687b3;}
+.concept_stars.cluster_9 {color: #06ac6e;}
+.concept_stars.cluster_10{color: #005380;}
 
 .concept_stars {
     width: 6rem;
@@ -82,7 +136,6 @@ h1 {color:red; font-size:30px; background-color: lightgrey;}
 }
 
 .concept_stars svg {
-    color: cornflowerblue;
     height: 1rem;
     white-space: nowrap;
 }
